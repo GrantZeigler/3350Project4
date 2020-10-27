@@ -71,6 +71,7 @@ void inorder(Process f, BinaryTreeNode<Item>* node_ptr)
 {
     if (node_ptr != NULL)
     {
+		
         inorder(f, node_ptr->left);
         f(node_ptr->data);
         inorder(f, node_ptr->right);

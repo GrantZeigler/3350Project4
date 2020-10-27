@@ -183,11 +183,39 @@
 	}
 
     template <class Item>
-    void remove (BinaryTreeNode<Item>* & root_ptr, Item Target);
+	void remove(BinaryTreeNode<Item>*& root_ptr, Item Target)
+	{
+		
+	}
     // delete is predefined, so we use the name "remove" rather than "delete".
 
     template <class Item>
-    BinaryTreeNode<Item>* reflect (const BinaryTreeNode<Item>* root_ptr);
+	BinaryTreeNode<Item>* reflect(BinaryTreeNode<Item>* root_ptr)
+	{	
+		//base cases for empty root
+		if (root_ptr == NULL)
+		{
+			return root_ptr;
+		} 
+		//base case for leaf
+		if (root_ptr->left == NULL && root_ptr->right == NULL)
+		{
+			return root_ptr;
+		}
+
+		BinaryTreeNode<int>* temp;
+		
+		//recursively move through the subtrees
+		reflect(root_ptr->left);
+		reflect(root_ptr->right);
+
+		//swap pointers in current node
+		temp = root_ptr->left;
+		root_ptr->left = root_ptr->right;
+		root_ptr->right = temp;
+
+		return root_ptr;
+	}
 
 #include "bintreetemplate.h"
 #endif

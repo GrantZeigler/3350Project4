@@ -1,8 +1,19 @@
 I 50
 I 30
 I 75
-P
 I 20
-I 60
+P
+R
+P
+TR
+TI
+TO
+I 35
+I 22
+I 1
+P
+R
+P
+C
 P
 Q
